@@ -1,0 +1,14 @@
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\bin\Release\Expendiature Program.exe.config
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\Expendiature Program.csproj.ResolveComReference.cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\bin\Release\Expendiature Program.exe
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\bin\Release\Expendiature Program.pdb
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\Expendiature Program.csprojResolveAssemblyReference.cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\MainWindow.baml
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\MainWindow.g.cs
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\App.g.cs
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\Expendiature Program_MarkupCompile.cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\Expendiature Program.g.resources
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\Expendiature_Program.Properties.Resources.resources
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\Expendiature Program.csproj.GenerateResource.Cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\Expendiature Program.exe
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Release\Expendiature Program.pdb
