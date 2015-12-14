@@ -25,3 +25,4 @@ E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiatu
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\Expendiature Program.g.resources
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\Expendiature_Program.Properties.Resources.resources
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\Expendiature Program.csproj.GenerateResource.Cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\Expendiature Program.csprojResolveAssemblyReference.cache

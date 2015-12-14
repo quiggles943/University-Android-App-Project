@@ -66,7 +66,8 @@ namespace Expendiature_Program
                 Header = "Credit",
                 DisplayMemberBinding = new Binding("Credit")
             });
-            
+            search_combobox.SelectedIndex = 0;
+            sheet_selection.SelectedIndex = 0;
             
         }
 
@@ -92,28 +93,30 @@ namespace Expendiature_Program
         }
         private void set()
         {
-            listView1.Items.Clear();
             listView1.ItemsSource = null;
-            list.transactions.Clear();
+            listView1.Items.Clear();
+            
+            list.Clear();
         }
 
         private void Load_Personal_Click(object sender, RoutedEventArgs e)
         {
             set();
-            if (sheet_selection.SelectedIndex == -1)
+            if (sheet_selection.SelectedIndex == -1 || sheet_selection.SelectedIndex == 0)
             {
                 Info_box.Text = "No sheet selected";
                 return;
             }
             else
             {
-                for (int i = lastrows[sheet_selection.SelectedIndex]; i >= 2; i--)
+                for (int i = lastrows[sheet_selection.SelectedIndex-1]; i >= 2; i--)
                 {
-                    readin(i, sheet_selection.SelectedIndex);
+                    readin(i, sheet_selection.SelectedIndex-1);
                 }
-                listView1.ItemsSource = list.transactions;
+                listView1.ItemsSource = list.Source;
                 total_label.Content = ("£" + list.Total());
-                Info_box.Text =(collection[sheet_selection.SelectedIndex].Name + " selected");
+                Info_box.Text =(collection[sheet_selection.SelectedIndex-1].Name + " selected");
+                numOfTransactions.Content = list.Transactions();
             }
         }
 
@@ -138,12 +141,13 @@ namespace Expendiature_Program
                 credit = (cred.Text);
             else
                 credit = "00.00";
-            list.transactions.Add(new Transaction
+            list.Add(new Transaction
             {
                 Date = date.ToShortDateString(),
                 Description = description,
                 Debit = debit,
-                Credit = credit
+                Credit = credit,
+                Row = i
             });
         }
 
@@ -160,35 +164,72 @@ namespace Expendiature_Program
             string date = datePicker.SelectedDate.ToString();
             string description = desc_box.Text;
             string amount = amount_box.Text;
-            try
+            if (add_rbtn.IsChecked == true)
             {
-                if (amount.StartsWith("-"))
+                try
                 {
-                    if (!double.TryParse(amount.Substring(1), out debit))
+                    if (amount.StartsWith("-"))
                     {
-                        throw new ArgumentException("Not valid number");
+                        if (!double.TryParse(amount.Substring(1), out debit))
+                        {
+                            throw new ArgumentException("Not valid number");
+                        }
+                        else
+                            collection[sheet_selection.SelectedIndex].Cells[lastrows[sheet_selection.SelectedIndex] + 1, 5] = debit;
                     }
                     else
-                        collection[sheet_selection.SelectedIndex].Cells[lastrows[sheet_selection.SelectedIndex] + 1, 5] = debit; 
-                }
-                else
-                {
-                    if (!double.TryParse(amount, out credit))
                     {
-                        throw new ArgumentException("Not valid number");
+                        if (!double.TryParse(amount, out credit))
+                        {
+                            throw new ArgumentException("Not valid number");
+                        }
+                        else
+                            collection[sheet_selection.SelectedIndex].Cells[lastrows[sheet_selection.SelectedIndex] + 1, 6] = credit;
                     }
-                    else
-                        collection[sheet_selection.SelectedIndex].Cells[lastrows[sheet_selection.SelectedIndex] + 1, 6] = credit;
+                    collection[sheet_selection.SelectedIndex].Cells[lastrows[sheet_selection.SelectedIndex] + 1, 3] = date;
+                    collection[sheet_selection.SelectedIndex].Cells[lastrows[sheet_selection.SelectedIndex] + 1, 4] = description;
+                    Mybook.Save();
+                    Info_box.Text = ("Transaction added to " + collection[sheet_selection.SelectedIndex].Name);
+                    reload(sender, e);
                 }
-                collection[sheet_selection.SelectedIndex].Cells[lastrows[sheet_selection.SelectedIndex] + 1, 3] = date;
-                collection[sheet_selection.SelectedIndex].Cells[lastrows[sheet_selection.SelectedIndex] + 1, 4] = description;
-                Mybook.Save();
-                Info_box.Text = ("Transaction added to " + collection[sheet_selection.SelectedIndex].Name);
-                reload(sender, e);
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else if (edit_rbtn.IsChecked == true)
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    if (amount.StartsWith("-"))
+                    {
+                        if (!double.TryParse(amount.Substring(1), out debit))
+                        {
+                            throw new ArgumentException("Not valid number");
+                        }
+                        else
+                            collection[sheet_selection.SelectedIndex].Cells[list.Find(listView1.SelectedItem).Row, 5] = debit;
+                    }
+                    else
+                    {
+                        if (!double.TryParse(amount, out credit))
+                        {
+                            throw new ArgumentException("Not valid number");
+                        }
+                        else
+                            collection[sheet_selection.SelectedIndex].Cells[list.Find(listView1.SelectedItem).Row, 6] = credit;
+                    }
+                    collection[sheet_selection.SelectedIndex].Cells[list.Find(listView1.SelectedItem).Row, 3] = date;
+                    collection[sheet_selection.SelectedIndex].Cells[list.Find(listView1.SelectedItem).Row, 4] = description;
+                    Mybook.Save();
+                    Info_box.Text = ("Transaction added to " + collection[sheet_selection.SelectedIndex].Name);
+                    reload(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -199,19 +240,24 @@ namespace Expendiature_Program
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(sheet_selection.SelectedIndex == -1)
+            if (sheet_selection.SelectedIndex == -1 || sheet_selection.SelectedIndex == 0)
             {
                 return;
             }
-            Load_Personal.Content = ("Load " + collection[sheet_selection.SelectedIndex].Name);
+            Load_Personal.Content = ("Load " + collection[sheet_selection.SelectedIndex-1].Name);
         }
 
         private void ListSheets()
         {
+            search_combobox.Items.Clear();
+            //search_combobox.Items.Add("--Select Sheet--");
+            //search_combobox.Items.Add("All Sheets");
             sheet_selection.Items.Clear();
+            //sheet_selection.Items.Add("--Select Sheet--");
             foreach (Excel.Worksheet sheet in MyApp.Worksheets)
             {
                 sheet_selection.Items.Add(sheet.Name);
+                search_combobox.Items.Add(sheet.Name);
             }
             i = 0;
             foreach (var item in sheet_selection.Items)
@@ -220,25 +266,27 @@ namespace Expendiature_Program
                 lastrows[i] = collection[i].Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
                 i++;
             }
-
+            sheet_selection.Items.Insert(0, "--Select Sheet--");
+            search_combobox.Items.Insert(0, "--Select Sheet--");
+            search_combobox.Items.Insert(1, "All Sheets");
         }
 
         private void Search_btn_Click(object sender, RoutedEventArgs e)
         {
             set();
-            if (sheet_selection.SelectedIndex == -1)
+            if (search_combobox.SelectedIndex == -1 || search_combobox.SelectedIndex == 0 || search_combobox.SelectedIndex == 1)
             {
                 Info_box.Text = "No sheet selected";
                 return;
             }
             else
             {
-                for (int i = lastrows[sheet_selection.SelectedIndex]; i >= 2; i--)
+                for (int i = lastrows[search_combobox.SelectedIndex - 2]; i >= 2; i--)
                 {
-                    readin(i, sheet_selection.SelectedIndex);
+                    readin(i, search_combobox.SelectedIndex - 2);
                 }
 
-                foreach(var item in list.transactions)
+                foreach(var item in list.Source)
                 {
                     if(item.Description.Contains(search_box.Text))
                     {
@@ -247,8 +295,39 @@ namespace Expendiature_Program
                 }
                 //listView1.ItemsSource = list.transactions;
                 total_label.Content = ("£" + list.Total());
-                Info_box.Text =(collection[sheet_selection.SelectedIndex].Name + " selected");
+                Info_box.Text =(collection[search_combobox.SelectedIndex-2].Name + " selected");
             }
+        }
+
+        private void listView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //desc_box.Text = list.Find(listView1.SelectedItem).Description;
+        }
+
+        private void double_Click(object sender, MouseButtonEventArgs e)
+        {
+            datePicker.SelectedDate = DateTime.Parse(list.Find(listView1.SelectedItem).Date);
+            desc_box.Text = list.Find(listView1.SelectedItem).Description;
+            if (list.Find(listView1.SelectedItem).Credit == "0")
+                amount_box.Text = "-" + list.Find(listView1.SelectedItem).Debit;
+            else
+                amount_box.Text = list.Find(listView1.SelectedItem).Credit;
+        }
+
+        private void edit_rbtn_Checked(object sender, RoutedEventArgs e)
+        {
+            add_transaction.Content = "Edit Transaction";
+            datePicker.SelectedDate = DateTime.Today.Date;
+            desc_box.Clear();
+            amount_box.Clear();
+        }
+
+        private void add_rbtn_Checked(object sender, RoutedEventArgs e)
+        {
+            add_transaction.Content = "Add Transaction";
+            datePicker.SelectedDate = DateTime.Today.Date;
+            desc_box.Clear();
+            amount_box.Clear();
         }
     }
 }

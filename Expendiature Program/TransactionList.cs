@@ -17,7 +17,7 @@ namespace Expendiature_Program
         private string debit;
         private double total;
 
-        public List<Transaction> transactions = new List<Transaction>();
+        private List<Transaction> transactions = new List<Transaction>();
 
         public TransactionList()
         {
@@ -29,11 +29,42 @@ namespace Expendiature_Program
             total = total - amount;
         }
 
-        public void Add(double amount)
+        public void Add(Transaction item)
         {
-            total = total + amount;
+            transactions.Add(item);
         }
 
+        public void Remove(Transaction item)
+        {
+            transactions.Remove(item);
+        }
+
+        public void Clear()
+        {
+            transactions.Clear();
+        }
+
+        public List<Transaction> Source
+        {
+            get { return transactions; }
+        }
+
+        public int Transactions()
+        {
+            return transactions.Count;
+        }
+
+        public Transaction Find(Object value)
+        {
+            Transaction returned = transactions.Find(x => x == value);
+            return returned;
+        }
+
+        public Transaction Find(string value)
+        {
+            Transaction returned = transactions.Find(x => x.Description == value);
+            return returned;
+        }
         public double Total()
         {
             total = 0;

@@ -16,18 +16,20 @@ namespace Expendiature_Program
         private string description;
         private double debit;
         private double credit;
+        private int row;
         
         public Transaction()
         {
 
         }
 
-        public Transaction(string date, string description, string debit, string credit)
+        public Transaction(string date, string description, string debit, string credit, int row)
         {
             Date = date;
             Description = description;
             Debit = debit;
             Credit = credit;
+            Row = row;
         }
 
         public string Date
@@ -98,6 +100,12 @@ namespace Expendiature_Program
                 else
                     throw new ArgumentException("Value is not a number");
             }
+        }
+
+        public int Row
+        {
+            get { return row; }
+            set { row = value;}
         }
     }
 }
