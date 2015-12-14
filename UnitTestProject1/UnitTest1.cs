@@ -7,6 +7,7 @@ namespace Expendiature_Program
     [TestClass]
     public class UnitTest1
     {
+        Random rnd = new Random();
         TransactionList list = new TransactionList();
         [TestMethod]
         public void ListTotal()
@@ -37,6 +38,29 @@ namespace Expendiature_Program
             Transaction actual = list.transactions.Find(x => x.Description == "New test amount");
 
             Assert.AreEqual(expected, actual, "Not correct object found");
+        }
+
+        [TestMethod]
+        public void newChecklist()
+        {
+            list.transactions.Clear();
+            double actualtotal = 0;
+            
+            for(int i = 0; i <= 100; i++)
+            {
+               actualtotal = actualtotal + createTransaction();
+            }
+
+            double expected = list.Total();
+            Assert.AreEqual(expected, actualtotal, 0.001, "Values not identical");
+        }
+        public double createTransaction()
+        {
+            double total;
+            Transaction test = new Transaction() { Date = (DateTime.Now.AddDays(rnd.Next(-5,50)).ToShortDateString()), Description = "Test amount", Credit = ("£"+rnd.Next(-50,100)) };
+            total = double.Parse(test.Credit);
+            list.transactions.Add(test);
+            return total;
         }
     }
 }

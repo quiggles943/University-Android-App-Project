@@ -25,8 +25,6 @@ namespace Expendiature_Program
         Microsoft.Office.Interop.Excel.Worksheet[] collection = new Microsoft.Office.Interop.Excel.Worksheet[20];
         private static Excel.Workbook Mybook = null;
         private static Excel.Application MyApp = null;
-        private static Excel.Worksheet Personal = null;
-        private static Excel.Worksheet Student = null;
         Excel.Range d = null;
         Excel.Range desc = null;
         Excel.Range deb = null;
@@ -76,8 +74,6 @@ namespace Expendiature_Program
         {     
             MyApp = new Excel.Application();
             Mybook = MyApp.Workbooks.Open("expendiature");
-            Personal = Mybook.Sheets[1];
-            Student = Mybook.Sheets[5];
             ListSheets();
         }
 
