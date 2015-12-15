@@ -209,7 +209,7 @@ namespace Expendiature_Program
                             throw new ArgumentException("Not valid number");
                         }
                         else
-                            collection[sheet_selection.SelectedIndex].Cells[list.Find(listView1.SelectedItem).Row, 5] = debit;
+                            collection[sheet_selection.SelectedIndex-1].Cells[list.Find(listView1.SelectedItem).Row, 5] = debit;
                     }
                     else
                     {
@@ -218,12 +218,12 @@ namespace Expendiature_Program
                             throw new ArgumentException("Not valid number");
                         }
                         else
-                            collection[sheet_selection.SelectedIndex].Cells[list.Find(listView1.SelectedItem).Row, 6] = credit;
+                            collection[sheet_selection.SelectedIndex-1].Cells[list.Find(listView1.SelectedItem).Row, 6] = credit;
                     }
-                    collection[sheet_selection.SelectedIndex].Cells[list.Find(listView1.SelectedItem).Row, 3] = date;
-                    collection[sheet_selection.SelectedIndex].Cells[list.Find(listView1.SelectedItem).Row, 4] = description;
+                    collection[sheet_selection.SelectedIndex-1].Cells[list.Find(listView1.SelectedItem).Row, 3] = date;
+                    collection[sheet_selection.SelectedIndex-1].Cells[list.Find(listView1.SelectedItem).Row, 4] = description;
                     Mybook.Save();
-                    Info_box.Text = ("Transaction added to " + collection[sheet_selection.SelectedIndex].Name);
+                    Info_box.Text = ("Transaction edited" + collection[sheet_selection.SelectedIndex-1].Name);
                     reload(sender, e);
                 }
                 catch (Exception ex)
