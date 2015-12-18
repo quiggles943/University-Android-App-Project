@@ -26,3 +26,7 @@ E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiatu
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\Expendiature_Program.Properties.Resources.resources
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\Expendiature Program.csproj.GenerateResource.Cache
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\Expendiature Program.csprojResolveAssemblyReference.cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\PasswordWindow.baml
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\PasswordWindow.g.cs
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\ChangePassword.baml
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Release\ChangePassword.g.cs

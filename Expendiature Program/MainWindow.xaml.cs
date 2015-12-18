@@ -306,12 +306,17 @@ namespace Expendiature_Program
 
         private void double_Click(object sender, MouseButtonEventArgs e)
         {
-            datePicker.SelectedDate = DateTime.Parse(list.Find(listView1.SelectedItem).Date);
-            desc_box.Text = list.Find(listView1.SelectedItem).Description;
-            if (list.Find(listView1.SelectedItem).Credit == "0")
-                amount_box.Text = "-" + list.Find(listView1.SelectedItem).Debit;
+            if (edit_rbtn.IsChecked == true)
+            {
+                datePicker.SelectedDate = DateTime.Parse(list.Find(listView1.SelectedItem).Date);
+                desc_box.Text = list.Find(listView1.SelectedItem).Description;
+                if (list.Find(listView1.SelectedItem).Credit == "0")
+                    amount_box.Text = "-" + list.Find(listView1.SelectedItem).Debit;
+                else
+                    amount_box.Text = list.Find(listView1.SelectedItem).Credit;
+            }
             else
-                amount_box.Text = list.Find(listView1.SelectedItem).Credit;
+                return;
         }
 
         private void edit_rbtn_Checked(object sender, RoutedEventArgs e)
@@ -320,6 +325,7 @@ namespace Expendiature_Program
             datePicker.SelectedDate = DateTime.Today.Date;
             desc_box.Clear();
             amount_box.Clear();
+            listView1.SelectedIndex = -1;
         }
 
         private void add_rbtn_Checked(object sender, RoutedEventArgs e)
@@ -328,6 +334,13 @@ namespace Expendiature_Program
             datePicker.SelectedDate = DateTime.Today.Date;
             desc_box.Clear();
             amount_box.Clear();
+            listView1.SelectedIndex = -1;
+        }
+
+        private void changePassword_btn_Click(object sender, RoutedEventArgs e)
+        {
+            ChangePassword changepassword = new ChangePassword();
+            changepassword.ShowDialog();
         }
     }
 }

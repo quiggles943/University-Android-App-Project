@@ -33,6 +33,7 @@
         <ComboBox x:Name="search_combobox" HorizontalAlignment="Left" Margin="764,83,0,0" VerticalAlignment="Top" Width="120"/>
         <RadioButton x:Name="add_rbtn" Content="Add" HorizontalAlignment="Left" Margin="92,59,0,0" VerticalAlignment="Top" Checked="add_rbtn_Checked"/>
         <RadioButton x:Name="edit_rbtn" Content="Edit" HorizontalAlignment="Left" Margin="157,59,0,0" VerticalAlignment="Top" Checked="edit_rbtn_Checked"/>
+        <Button x:Name="changePassword_btn" Content="Change Password" HorizontalAlignment="Left" Margin="26,336,0,0" VerticalAlignment="Top" Width="104" Click="changePassword_btn_Click"/>
 
     </Grid>
 </Window>
