@@ -3,37 +3,39 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Expendiature" Height="423.334" Width="953.733" Closing="closed" Closed="closed">
     <Grid>
-        <ListView x:Name="listView1" HorizontalAlignment="Left" Height="177" Margin="267,54,0,0" VerticalAlignment="Top" Width="425" SelectionChanged="listView1_SelectionChanged" PreviewMouseDoubleClick="double_Click">
+        <ListView x:Name="listView1" HorizontalAlignment="Left" Height="177" Margin="269,67,0,0" VerticalAlignment="Top" Width="425" SelectionChanged="listView1_SelectionChanged" PreviewMouseDoubleClick="double_Click">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="Load_Personal" Content="Load" HorizontalAlignment="Left" Margin="431,240,0,0" VerticalAlignment="Top" Width="108" Click="Load_Personal_Click"/>
-        <Label Content="Total:" HorizontalAlignment="Left" Margin="586,238,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="total_label" Content="Label" HorizontalAlignment="Left" Margin="630,238,0,0" VerticalAlignment="Top" Width="62"/>
-        <Label Content="Add/Edit Transaction" HorizontalAlignment="Left" Margin="49,20,0,0" VerticalAlignment="Top" Width="180" FontSize="18" FontStyle="Italic"/>
-        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="91,83,0,0" VerticalAlignment="Top"/>
-        <Label Content="Date:" HorizontalAlignment="Left" Margin="50,81,0,0" VerticalAlignment="Top"/>
-        <Label Content="Description:" HorizontalAlignment="Left" Margin="14,117,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="desc_box" HorizontalAlignment="Left" Height="23" Margin="92,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
-        <TextBox x:Name="amount_box" HorizontalAlignment="Left" Height="23" Margin="92,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57"/>
-        <Label Content="Amount:" HorizontalAlignment="Left" Margin="32,154,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="add_transaction" Content="Add Transaction" HorizontalAlignment="Left" Margin="72,185,0,0" VerticalAlignment="Top" Width="101" Click="add_transaction_Click"/>
-        <ComboBox x:Name="sheet_selection" HorizontalAlignment="Left" Margin="279,240,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
-        <Label HorizontalAlignment="Left" Margin="14,219,0,0" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" Width="215" Height="63">
+        <Button x:Name="Load_Personal" Content="Load" HorizontalAlignment="Left" Margin="433,253,0,0" VerticalAlignment="Top" Width="108" Click="Load_Personal_Click"/>
+        <Label Content="Total:" HorizontalAlignment="Left" Margin="588,251,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="total_label" Content="Label" HorizontalAlignment="Left" Margin="632,251,0,0" VerticalAlignment="Top" Width="62"/>
+        <Label Content="Add/Edit Transaction" HorizontalAlignment="Left" Margin="51,33,0,0" VerticalAlignment="Top" Width="180" FontSize="18" FontStyle="Italic"/>
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="93,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="52,94,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description:" HorizontalAlignment="Left" Margin="16,130,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="desc_box" HorizontalAlignment="Left" Height="23" Margin="94,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
+        <TextBox x:Name="amount_box" HorizontalAlignment="Left" Height="23" Margin="94,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57"/>
+        <Label Content="Amount:" HorizontalAlignment="Left" Margin="34,167,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="add_transaction" Content="Add Transaction" HorizontalAlignment="Left" Margin="74,198,0,0" VerticalAlignment="Top" Width="101" Click="add_transaction_Click"/>
+        <ComboBox x:Name="sheet_selection" HorizontalAlignment="Left" Margin="281,253,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label HorizontalAlignment="Left" Margin="16,232,0,0" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" Width="215" Height="63">
             <TextBlock x:Name="Info_box" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="53" Width="205"/>
         </Label>
-        <TextBox x:Name="search_box" HorizontalAlignment="Left" Height="23" Margin="735,156,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
-        <Button x:Name="Search_btn" Content="Search" HorizontalAlignment="Left" Margin="784,185,0,0" VerticalAlignment="Top" Width="75" Click="Search_btn_Click"/>
-        <Label Content="No of Transactions:" HorizontalAlignment="Left" Margin="516,28,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="numOfTransactions" Content="0" HorizontalAlignment="Left" Margin="628,28,0,0" VerticalAlignment="Top"/>
-        <Label Content="Search Transactions" HorizontalAlignment="Left" Margin="735,20,0,0" VerticalAlignment="Top" Width="183" FontSize="18" FontStyle="Italic"/>
-        <ComboBox x:Name="search_combobox" HorizontalAlignment="Left" Margin="764,83,0,0" VerticalAlignment="Top" Width="120"/>
-        <RadioButton x:Name="add_rbtn" Content="Add" HorizontalAlignment="Left" Margin="92,59,0,0" VerticalAlignment="Top" Checked="add_rbtn_Checked"/>
-        <RadioButton x:Name="edit_rbtn" Content="Edit" HorizontalAlignment="Left" Margin="157,59,0,0" VerticalAlignment="Top" Checked="edit_rbtn_Checked"/>
-        <Button x:Name="changePassword_btn" Content="Change Password" HorizontalAlignment="Left" Margin="26,336,0,0" VerticalAlignment="Top" Width="104" Click="changePassword_btn_Click"/>
+        <TextBox x:Name="search_box" HorizontalAlignment="Left" Height="23" Margin="737,169,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <Button x:Name="Search_btn" Content="Search" HorizontalAlignment="Left" Margin="786,198,0,0" VerticalAlignment="Top" Width="75" Click="Search_btn_Click"/>
+        <Label Content="No of Transactions:" HorizontalAlignment="Left" Margin="518,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="numOfTransactions" Content="0" HorizontalAlignment="Left" Margin="630,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Search Transactions" HorizontalAlignment="Left" Margin="737,33,0,0" VerticalAlignment="Top" Width="183" FontSize="18" FontStyle="Italic"/>
+        <ComboBox x:Name="search_combobox" HorizontalAlignment="Left" Margin="766,96,0,0" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="add_rbtn" Content="Add" HorizontalAlignment="Left" Margin="94,72,0,0" VerticalAlignment="Top" Checked="add_rbtn_Checked"/>
+        <RadioButton x:Name="edit_rbtn" Content="Edit" HorizontalAlignment="Left" Margin="159,72,0,0" VerticalAlignment="Top" Checked="edit_rbtn_Checked"/>
+        <Button x:Name="changePassword_btn" Content="Change Password" HorizontalAlignment="Left" Margin="28,349,0,0" VerticalAlignment="Top" Width="104" Click="changePassword_btn_Click"/>
+        <Label x:Name="last_unsuccessful" Content="Label" HorizontalAlignment="Left" Margin="786,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Last Unsuccessful Log-on:" HorizontalAlignment="Left" Margin="645,10,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Drawing;
+using System.IO;
 
 namespace Expendiature_Program
 {
@@ -34,8 +35,13 @@ namespace Expendiature_Program
         TransactionList list = new TransactionList();
         int selected;
         int i;
+        string path = @"..\..\logonattempts.ini";
+        string filepath;
+
+        public List<Attempt> attempts = new List<Attempt>();
         public MainWindow()
-        {           
+        {
+            filepath = System.IO.Path.GetFullPath(path);
             DateTime Today = DateTime.Today;            
             InitializeComponent();
             load();           
@@ -68,7 +74,8 @@ namespace Expendiature_Program
             });
             search_combobox.SelectedIndex = 0;
             sheet_selection.SelectedIndex = 0;
-            
+            attemtsreadin();
+            last_unsuccessful.Content = attempts.Last(x => x.Correct == false).Date.ToString();
         }
 
         private void load()
@@ -341,6 +348,35 @@ namespace Expendiature_Program
         {
             ChangePassword changepassword = new ChangePassword();
             changepassword.ShowDialog();
+        }
+
+        private void attemtsreadin()
+        {
+            int filelength = 0;
+            StreamReader r = new StreamReader(filepath);
+            using (r)
+            {
+                while (r.ReadLine() != null) { filelength++; }
+            }
+            int i = 1;
+            string[] file = System.IO.File.ReadAllLines(filepath);
+            int len = file.Length;
+            while (i < (len))
+            {
+                string[] column = file[i].Split('\t');
+                int j = 0;
+                while (j < (column.Length))
+                {
+                    string buffer = column[j];
+
+                    j++;
+                }
+                attempts.Add(new Attempt() { Correct = Convert.ToBoolean(column[0]), Date = Convert.ToDateTime(column[1]) });
+                
+                i++;
+            }
+            var ordereddates = attempts.OrderBy(x => x.Date);
+            attempts = ordereddates.ToList();
         }
     }
 }
