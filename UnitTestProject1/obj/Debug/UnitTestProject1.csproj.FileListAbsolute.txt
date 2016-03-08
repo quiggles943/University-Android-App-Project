@@ -5,3 +5,10 @@ E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\UnitTestP
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\UnitTestProject1\bin\Debug\Expendiature Program.pdb
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\UnitTestProject1\bin\Debug\Expendiature Program.exe
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\UnitTestProject1\bin\Debug\Expendiature Program.pdb
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

@@ -21,7 +21,7 @@
         <TextBox x:Name="amount_box" HorizontalAlignment="Left" Height="23" Margin="94,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57"/>
         <Label Content="Amount:" HorizontalAlignment="Left" Margin="34,167,0,0" VerticalAlignment="Top"/>
         <Button x:Name="add_transaction" Content="Add Transaction" HorizontalAlignment="Left" Margin="74,198,0,0" VerticalAlignment="Top" Width="101" Click="add_transaction_Click"/>
-        <ComboBox x:Name="sheet_selection" HorizontalAlignment="Left" Margin="281,253,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox x:Name="sheet_selection" HorizontalAlignment="Left" Margin="281,253,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0"/>
         <Label HorizontalAlignment="Left" Margin="16,232,0,0" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" Width="215" Height="63">
             <TextBlock x:Name="Info_box" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="53" Width="205"/>
         </Label>
@@ -30,7 +30,7 @@
         <Label Content="No of Transactions:" HorizontalAlignment="Left" Margin="518,41,0,0" VerticalAlignment="Top"/>
         <Label x:Name="numOfTransactions" Content="0" HorizontalAlignment="Left" Margin="630,41,0,0" VerticalAlignment="Top"/>
         <Label Content="Search Transactions" HorizontalAlignment="Left" Margin="737,33,0,0" VerticalAlignment="Top" Width="183" FontSize="18" FontStyle="Italic"/>
-        <ComboBox x:Name="search_combobox" HorizontalAlignment="Left" Margin="766,96,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="search_combobox" HorizontalAlignment="Left" Margin="766,96,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
         <RadioButton x:Name="add_rbtn" Content="Add" HorizontalAlignment="Left" Margin="94,72,0,0" VerticalAlignment="Top" Checked="add_rbtn_Checked"/>
         <RadioButton x:Name="edit_rbtn" Content="Edit" HorizontalAlignment="Left" Margin="159,72,0,0" VerticalAlignment="Top" Checked="edit_rbtn_Checked"/>
         <Button x:Name="changePassword_btn" Content="Change Password" HorizontalAlignment="Left" Margin="28,349,0,0" VerticalAlignment="Top" Width="104" Click="changePassword_btn_Click"/>

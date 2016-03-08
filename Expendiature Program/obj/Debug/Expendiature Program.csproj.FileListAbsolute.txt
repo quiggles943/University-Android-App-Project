@@ -12,3 +12,21 @@ E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiat
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\bin\Debug\Expendiature Program.pdb
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Debug\Expendiature Program.exe
 E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expendiature Program\Expendiature Program\obj\Debug\Expendiature Program.pdb
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\bin\Debug\Expendiature Program.exe.config
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\bin\Debug\Expendiature Program.exe
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\bin\Debug\Expendiature Program.pdb
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\Expendiature Program.csprojResolveAssemblyReference.cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\Expendiature Program.csproj.ResolveComReference.cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\ChangePassword.baml
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\MainWindow.baml
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\PasswordWindow.baml
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\ChangePassword.g.cs
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\MainWindow.g.cs
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\PasswordWindow.g.cs
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\App.g.cs
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\Expendiature Program_MarkupCompile.cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\Expendiature Program.g.resources
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\Expendiature_Program.Properties.Resources.resources
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\Expendiature Program.csproj.GenerateResource.Cache
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\Expendiature Program.exe
+E:\Users\Paul\Documents\Uni\Programming\Bitbucket\Expenditure Program\Expendiature Program\obj\Debug\Expendiature Program.pdb
